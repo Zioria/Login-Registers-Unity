@@ -413,6 +413,8 @@ MonoBehaviour:
   accountUsername: {fileID: 1613997809}
   accountPassword: {fileID: 245334101}
   Info: {fileID: 2144600783}
+  cur_Name: 
+  ukey: accountusername
 --- !u!4 &308035492
 Transform:
   m_ObjectHideFlags: 0
@@ -1993,7 +1995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2144600782
 RectTransform:
   m_ObjectHideFlags: 0
