@@ -5,6 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+
+
 
 public class AccountRegisterLogin : MonoBehaviour
 {
@@ -12,7 +15,7 @@ public class AccountRegisterLogin : MonoBehaviour
     
     public InputField accountUsername;
     public InputField accountPassword;
-    public Text Info;
+    [SerializeField] private Text Info;
 
     [SerializeField] private string cur_Name;
     [SerializeField] private string ukey = "accountusername";
@@ -111,6 +114,7 @@ public class AccountRegisterLogin : MonoBehaviour
                 {
                     PlayerPrefs.SetString(ukey, uName);
                     Info.text = "Login Success " + uName;
+                    SceneManager.LoadScene("Info player");
                 }
                 else
                 {

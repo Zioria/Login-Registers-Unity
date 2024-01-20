@@ -5,23 +5,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SwitchRegisOrLogin : MonoBehaviour
 {
-    private void Awake()
-    {
-        SceneManager.LoadScene("Register");
-    }
+   [SerializeField] private GameObject LoginParent;
+   [SerializeField] private GameObject RegisterParent;
+   
+   
 
-    public void Register()
-    {
-        SceneManager.LoadScene("Register");
-    }
+   public void Login()
+   {
+      SceneManager.LoadScene("Info player");
+   }
 
-    public void Login()
-    {
-        SceneManager.LoadScene("Login");
-    }
-    
-    public void LoginSuccess()
-    {
-        SceneManager.LoadScene("Info player");
-    }
+   public void Logout()
+   {
+      SceneManager.LoadScene("Register&Login");
+   }
 }

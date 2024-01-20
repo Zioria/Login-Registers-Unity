@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scence/Login.unity
     guid: ee77f52711ea3b24e8bd35c418df375b
   - enabled: 1
-    path: Assets/Scence/Register.unity
+    path: Assets/Scence/Register&Login.unity
     guid: b5023db552350f645b5bdc42cfd473f2
   - enabled: 1
     path: Assets/Scence/Info player.unity
