@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Networking;
 
 public class AccountRegisterLogin : MonoBehaviour
 {
+    public string baseUrl = "http://localhost/Ziori/UnityRegisterAndLogin/";
+    
     public InputField accountUsername;
     public InputField accountPassword;
+    public Text Info;
     
     // Start is called before the first frame update
     void Start()
@@ -21,7 +25,7 @@ public class AccountRegisterLogin : MonoBehaviour
         
     }
 
-    public void AccountReister()
+    public void AccountRegister()
     {
         string uName = accountUsername.text;
         string pWord = accountPassword.text;
@@ -31,9 +35,9 @@ public class AccountRegisterLogin : MonoBehaviour
     IEnumerator RegisterNewAccount(string uName, string pWord)
     {
         WWWForm form = new WWWForm();
-        form.AddField("username", uName);
-        form.AddField("password", pWord);
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/tutorial/unityphppostget/", form))
+        form.AddField("newAccountUsername", uName);
+        form.AddField("newAccountPassword", pWord);
+        using (UnityWebRequest www = UnityWebRequest.Post(baseUrl, form))
         {
             www.downloadHandler = new DownloadHandlerBuffer();
             yield return www.SendWebRequest();
@@ -46,6 +50,7 @@ public class AccountRegisterLogin : MonoBehaviour
             {
                 string reponseText = www.downloadHandler.text;
                 Debug.Log("Reponse Text from the sever = " + reponseText);
+                Info.text =  reponseText;
             }
         }
     }
