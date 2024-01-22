@@ -411,6 +411,7 @@ MonoBehaviour:
   baseUrl: http://localhost/Ziori/UnityRegisterAndLogin/
   accountUsername: {fileID: 1613997809}
   accountPassword: {fileID: 245334101}
+  uID: 1
   Info: {fileID: 1555662026}
   cur_Name: 
   ukey: accountusername
@@ -441,8 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9106f7564f3811843b58d3cf05f6510b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoginParent: {fileID: 0}
-  RegisterParent: {fileID: 0}
 --- !u!1 &470920245
 GameObject:
   m_ObjectHideFlags: 0
