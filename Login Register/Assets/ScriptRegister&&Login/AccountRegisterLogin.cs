@@ -15,6 +15,7 @@ public class AccountRegisterLogin : MonoBehaviour
     
     public InputField accountUsername;
     public InputField accountPassword;
+    [SerializeField] private  int uID = 000001;
     [SerializeField] private Text Info;
 
     [SerializeField] private string cur_Name;
@@ -33,7 +34,7 @@ public class AccountRegisterLogin : MonoBehaviour
             if (PlayerPrefs.GetString(ukey) != "")
             {
                 cur_Name = PlayerPrefs.GetString(ukey);
-                Info.text = "Welcome :" + cur_Name;
+                Info.text = "Welcome :" + cur_Name + "\n" ;
             }
             else
             {
@@ -75,6 +76,7 @@ public class AccountRegisterLogin : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("newAccountUsername", uName);
         form.AddField("newAccountPassword", pWord);
+        form.AddField("userid", uID);
         using (UnityWebRequest www = UnityWebRequest.Post(baseUrl, form))
         {
             www.downloadHandler = new DownloadHandlerBuffer();
@@ -98,6 +100,7 @@ public class AccountRegisterLogin : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("loginUsername", uName);
         form.AddField("loginPassword", pWord);
+        form.AddField("UID", uID);
         using (UnityWebRequest www = UnityWebRequest.Post(baseUrl, form))
         {
             www.downloadHandler = new DownloadHandlerBuffer();
@@ -110,18 +113,18 @@ public class AccountRegisterLogin : MonoBehaviour
             else
             {
                 string reponseText = www.downloadHandler.text;
-                if (reponseText == "1")
+                if (reponseText == "1" )
                 {
                     PlayerPrefs.SetString(ukey, uName);
-                    Info.text = "Login Success " + uName;
+                    Info.text = "Login Success " + uName + "\n" + reponseText  ;
                     SceneManager.LoadScene("Info player");
                 }
                 else
                 {
                     Info.text =  "Login Failed.";
                 }
-               
-                
+
+
             }
         }
     }
