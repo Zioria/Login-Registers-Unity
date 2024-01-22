@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SwitchRegisOrLogin : MonoBehaviour
 {
-   [SerializeField] private GameObject LoginParent;
-   [SerializeField] private GameObject RegisterParent;
-   
    
 
    public void Login()
